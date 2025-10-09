@@ -40,5 +40,5 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
-    puts("Error: an unexpected numer of arguments");
+    puts("Error: an unexpected number of arguments");
 }
