@@ -45,5 +45,5 @@ int main(int argc, char *argv[]) {
         return EXIT_SUCCESS;
     }
 
-    puts("Error: an unexpected number of arguments");
+    fputs("Error: an unexpected number of arguments\n", stderr);
 }
