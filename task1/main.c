@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
 #include <stdbool.h>
 
@@ -24,7 +25,7 @@ void process_text(FILE* istream) {
 int main(int argc, char *argv[]) {
     if (argc == 1) {
         process_text(stdin);
-        return 0;
+        return EXIT_SUCCESS;
     }
 
     if (argc == 2) {
@@ -33,7 +34,7 @@ int main(int argc, char *argv[]) {
 
         if (file == NULL) {
             perror(filename);
-            return 1;
+            return EXIT_FAILURE;
         }
 
         process_text(file);
