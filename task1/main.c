@@ -17,7 +17,6 @@ void process_text(FILE* istream) {
         is_prev_space = isspace(c);
         ++char_count;
     }
-    fclose(istream);
     printf("%llu\n%llu\n%llu\n", line_count, word_count, char_count);
 }
 
@@ -37,6 +36,8 @@ int main(int argc, char *argv[]) {
         }
 
         process_text(file);
+
+        fclose(file);
         return 0;
     }
 
