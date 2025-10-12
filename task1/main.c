@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
         FILE* file = fopen(filename, "r");
 
         if (file == NULL) {
-            fprintf(stderr, "Error: file \"%s\" not found\n", filename);
+            perror(filename);
             return 1;
         }
 
