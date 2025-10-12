@@ -7,6 +7,7 @@ void process_text(FILE* istream) {
     int c;
     long long line_count = 0, word_count = 0, char_count = 0;
     bool is_prev_space = true;
+
     while ((c = fgetc(istream)) != EOF) {
         if (c == '\n') {
             ++line_count;
@@ -19,6 +20,7 @@ void process_text(FILE* istream) {
         is_prev_space = isspace(c);
         ++char_count;
     }
+
     printf("%llu\n%llu\n%llu\n", line_count, word_count, char_count);
 }
 
@@ -40,7 +42,7 @@ int main(int argc, char *argv[]) {
         process_text(file);
 
         fclose(file);
-        return 0;
+        return EXIT_SUCCESS;
     }
 
     puts("Error: an unexpected number of arguments");
