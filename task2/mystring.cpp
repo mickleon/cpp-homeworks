@@ -28,9 +28,9 @@ String String::operator+(const String &other) const {
 }
 
 String &String::operator+=(const String &other) {
-    char *str = new char[this->len + other.len];
+    char *str = new char[this->len + other.len + 1];
     memcpy(str, this->str, this->len);
-    memcpy(str + this->len, other.str, other.len);
+    memcpy(str + this->len, other.str, other.len + 1);
 
     delete[] this->str;
     this->str = str;
